@@ -51,8 +51,8 @@ info 'starting s3 upload'
 cd "$WERCKER_ROOT"
 
 set +e
-debug "s3cmd put --acl-public --verbose '$WERCKER_S3PUT_FILE' '$WERCKER_S3PUT_URL'"
-sync_output=$(s3cmd sync --acl-public --verbose "$WERCKER_S3PUT_FILE" "$WERCKER_S3PUT_URL")
+debug "s3cmd put --acl-private --verbose '$WERCKER_S3PUT_FILE' '$WERCKER_S3PUT_URL'"
+sync_output=$(s3cmd sync --acl-private --verbose "$WERCKER_S3PUT_FILE" "$WERCKER_S3PUT_URL")
 
 if [[ $? -ne 0 ]];then
     warning $sync_output
