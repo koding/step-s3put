@@ -27,7 +27,7 @@ then
     info 's3cmd not found, start installing it'
     wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add -
     sudo wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list
-    sudo apt-get update && sudo apt-get install s3cmd
+    sudo apt-get update && sudo apt-get install -y s3cmd
     success 's3cmd installed succesfully'
 else
     info 'skip s3cmd install, command already available'
